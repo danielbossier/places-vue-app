@@ -33,6 +33,9 @@
         <button>Close</button>
       </form>
     </dialog>
+    <ul>
+      <li v-for="error in errors" :key="error.id">{{ error }}</li>
+    </ul>
   </div>
 </template>
 
