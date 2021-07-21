@@ -48,6 +48,7 @@ export default {
       places: {},
       newPlaceParams: {},
       currentPlace: {},
+      errors: [],
     };
   },
   created: function () {
@@ -68,7 +69,9 @@ export default {
           console.log("Yay!", response.data);
           this.places.push(response.data);
         })
-        .catch((error) => console.log(error.response));
+        .catch((error) => {
+          this.errors = error.response.data.errors;
+        });
     },
     showPlace: function (place) {
       console.log(place);
